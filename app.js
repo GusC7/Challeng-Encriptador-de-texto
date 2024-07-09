@@ -9,6 +9,8 @@ const btnEncriptar = document.querySelector('#btn-encriptar');
 const btnDesencriptar = document.querySelector('#btn-desencriptar');
 const btnCopy = document.querySelector('#btn-copiar');
 
+
+
 const regexInput = /^[a-z0-9 ]*$/;
 
 let mensaje = true;
@@ -46,14 +48,15 @@ function encriptarFrase() {
 btnEncriptar.addEventListener('click', encriptarFrase);
 
 // Función que copia la frase encriptada en el textarea para desencriptar
-function copy() {
-  textInputEncriptada.select();
-  document.execCommand("copy");
-  textInputEncriptada.setAttribute('disabled', true);
-  textInputEncriptada.value = '';
-  alert("El texto ha sido copiado")
-}
-btnCopy.addEventListener('click', copy);
+async function copy() {
+    try {
+      await navigator.clipboard.writeText(textInputEncriptada.value);
+      alert("El texto ha sido copiado");
+    } catch (err) {
+      console.error('Error al copiar el texto: ', err);
+    }
+  }
+  btnCopy.addEventListener('click', copy);
 
 // Función inversa, para desencriptar
 function desencriptarFrase() {
