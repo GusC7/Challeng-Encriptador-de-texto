@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encriptador de texto</title>
+</head>
+<body>
+  <div class="container">
+  <header class="header">
+    <h1>ENCRIPTADOR</h1>
+  </header>
+  <main class="main__container">
+    <form class="form">
+      <textarea class="form__frase" id="frase" placeholder="Ingrese el texto aqui" required></textarea>
+      <div class="form__sugerencia">
+        
+        <p class="form__parrafo">Solo letras minúsculas y sin acentos</p>
+        <p>-Para probar el desencriptador se utiliza el botón "Copiar"</p>
+      </div>
+      <div class="btn__container">
+        <input class="btn btn-encriptar" id="btn-encriptar" type="button" value="Encriptar">
+        <input class="btn btn-desencriptar" id="btn-desencriptar" type="button" value="Desencriptar">
+      </div>
+    </form>
+    <section class="desencriptar">
+      <div class="desencriptar__mensaje">
+        <h2 class="desencriptar__mensaje__titulo">Ningún mensaje fue encontrado</h2>
+        <p class="desencriptar__mensaje__parrafo">Ingresa el texto que desees encriptar o desencriptar.</p>
+      </div>
+      <div class="desencriptar__resultado">
+        <textarea class="frase-encriptada" id="frase-encriptada" readonly></textarea>
+        <input class="btn btn-copiar" id="btn-copiar" type="button" value="Copiar">
+      </div>
+    </section>
+  </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
